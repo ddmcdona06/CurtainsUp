@@ -1,28 +1,34 @@
 import React, {useState} from "react";
-import { View, TextInput, Text, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import styles from '../styles/searchBarStyle';
-import {Button} from 'react-native-paper'
+import {Button, Searchbar} from 'react-native-paper'
 
 interface Props {
   onSearch: (query: string) => void;
 }
 
-export default function SearchBar({onSearch}: Props) {
+export default function SearchBars({onSearch}: Props) {
   const [query, setQuery] = useState('');
 
   return(
-    <View>
-      <TextInput
+    <View style={styles.container} >
+      <Searchbar
+      mode="bar"
       value={query}
       onChangeText={setQuery}
       placeholder="City or Zip"
       placeholderTextColor='#888'
       onSubmitEditing={() => onSearch(query.trim())}
       returnKeyType="search"
+      elevation={5}
       style={styles.input}
       />
       <TouchableOpacity style={styles.button} onPress={() => onSearch(query.trim())}>
-        <Button mode="contained" elevation={5} buttonColor="#bfa608ff" >Search</Button>
+        <Button
+        mode="contained"
+        elevation={5}
+        buttonColor="#bfa608ff"
+        >Search</Button>
       </TouchableOpacity>
     </View>
   );
