@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
 import indexStyle from "../styles/indexStyle";
 import SearchBars from "../components/searchBar";
+import { createContext } from "vm";
 
 
 //splash screen animation duration
@@ -15,6 +16,25 @@ SplashScreen.setOptions({
   fade: true
 });
 
+export interface SearchContextValue {
+  query: string;
+  setQuery: (q: string) => void;
+}
+
+// export const SearchContext = createContext<SearchContextValue>({
+//   query: '',
+//   setQuery: () => {}
+// });
+
+export interface FavoritesContextValue {
+  count: number;
+  setCount: (n: number) => void;
+}
+
+// export const FavoritesContext = createContext<FavoritesContextValue>({
+//   count: 0,
+//   setCount: () => {}
+// });
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
 export default function RootLayout() {

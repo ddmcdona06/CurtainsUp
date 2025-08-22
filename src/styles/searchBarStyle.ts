@@ -2,9 +2,13 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flex: 1,
+    height: '50%',
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    elevation: 5,
+    paddingTop: 15,
   },
   input: {
     // flex: 1,
