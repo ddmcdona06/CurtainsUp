@@ -2,8 +2,8 @@ import { Text, View } from "react-native";
 import React from "react";
 import indexStyle from "../styles/indexStyle";
 import { Card } from "react-native-paper";
-import cardImage from '../../assets/images/curtain-frame-gold-color_800563-4319.png'
-
+import cardImage from '../../assets/images/curtain-frame-gold-color_800563-4319.png';
+import backgroundImage from '../../assets/images/b and g triangle.jpg';
 
 export default function Index() {
   return (
@@ -12,7 +12,7 @@ export default function Index() {
       mode="elevated"
       style={{
         alignContent:'center',
-        backgroundColor: '#dec41c7c',
+        backgroundColor: '#0b30e93c',
         width:'70%',
       }}>
         <Card.Content>
